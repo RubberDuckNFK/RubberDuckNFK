@@ -12,6 +12,10 @@ This project celebrates [Florentijn Hofman's Rubber Duck's visit to  Norfolk, Vi
 
 There's no wrong way to experience Rubber Duck. Take pictures with the duck or take pictures of the duck. Take a stroll along The Hague with your family and friends to enjoy views best described as just ducky."
 
+About the Cameara Stream.  We use a reverse proxy to pull the mjpeg stream and rebroadcast it.  If you need a copy of any of the files, we store them once per second on our ftp site. ftp://rubberducknfk@rubberducknfk.com
+
+Ftp password is 4LE#%4v'1406
+
 ... Please hack on this. Submit pull requests. We will do our best to keep [RubberDuckNFK](http://rubberducknfk.com/) updated.
 
 *This project is released into the [Public Domain] (http://en.wikipedia.org/wiki/Public_domain_software)
