@@ -7,7 +7,7 @@ router.post('/respondToVoiceCall', function(req, res) {
     if (twilio.validateExpressRequest(req, '7580cfb76678516499711f7ceb9aaf7a')) {
         var twiml = new twilio.TwimlResponse();
 
-        twiml.say('Hi!  You\'ve reached the Rubber Duck! Now, here\'s Skye Zentz and the Gents, siging ' +
+        twiml.say('Hi!  You\'ve reached the Rubber Duck! Now, here\'s Sky Zentz and Friends, siging ' +
             'my song!')
             .play('http://rubberducknfk.com/media/RubberDucky.mp3');
 
