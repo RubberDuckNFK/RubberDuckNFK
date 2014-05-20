@@ -16,6 +16,8 @@ About the Cameara Stream.  We use a reverse proxy to pull the mjpeg stream and r
 
 Ftp password is 4LE#%4v'1406
 
+*** There are now files in the /front directory of the FTP server with a much better view of the front of the duck. These are sent once every three seconds for now.  
+
 ... Please hack on this. Submit pull requests. We will do our best to keep [RubberDuckNFK](http://rubberducknfk.com/) updated.
 
 *This project is released into the [Public Domain] (http://en.wikipedia.org/wiki/Public_domain_software)
