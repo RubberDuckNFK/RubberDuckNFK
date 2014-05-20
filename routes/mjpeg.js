@@ -6,6 +6,6 @@ router.get('/index1.jpg',
     new MjpegProxy('http://72.214.52.227:49152/mjpg/video.mjpg').proxyRequest);
 
 router.get('/index2.jpg',
-    new MjpegProxy('http://23.253.149.209:8000/video.mjpg').proxyRequest);
+    new MjpegProxy('http://10.208.193.232:8000/video.mjpg').proxyRequest);
 
 module.exports = router;
