@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var mjpeg = require('./routes/mjpeg');
 var users = require('./routes/users');
 var twilio = require('./routes/twilio');
 
@@ -26,7 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/mjpeg', mjpeg);
 app.use('/twilio', twilio);
 
 /// catch 404 and forward to error handler

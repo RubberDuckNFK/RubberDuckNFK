@@ -1,5 +1,35 @@
 extends layout
 
 block content
+
 	div.container
-		img.img-responsive(src = '/mjpeg/index1.jpg')
+		div
+			p
+				input(type="checkbox", name="version", checked=(true===false ? "checked" : undefined))
+			img#myimg.img-responsive(src = 'http://rubberducknfk.com/images/front.jpg')
+		div
+			br
+			iframe(src="https://public.ducksboard.com/w/D31_0rea5jXGQnRgi9X8" width="300" height="146" frameborder="0" scrolling="no" style="border: solid rgba(38, 42, 50, 0.8) 10px; border-radius: 5px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;")
+			iframe(src="https://public.ducksboard.com/w/o_aKeFzYxD_4lwI9CEPo" width="300" height="146" frameborder="0" scrolling="no" style="border: solid rgba(243, 243, 232, 0.701961) 10px; border-radius: 5px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;")
+			iframe(src="https://public.ducksboard.com/w/OufKfhGKYCxayuT0DkJ9" width="300" height="146" frameborder="0" scrolling="no" style="border: solid rgba(243, 243, 232, 0.701961) 10px; border-radius: 5px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;")
+		script.
+			var sw = $('input[name="version"]');
+			setInterval(function(){
+
+				if(sw.is(':checked'))
+				{
+					$("#myimg").attr("src", "http://rubberducknfk.com/images/front.jpg?"+new Date().getTime());
+				}
+				else
+				{
+					$("#myimg").attr("src", "http://rubberducknfk.com/images/back.jpg?"+new Date().getTime());
+				}},1000);
+
+			sw.bootstrapSwitch('state', true, true);
+			sw.bootstrapSwitch('onText', 'Front', true);
+			sw.bootstrapSwitch('onColor', 'info', true);
+			sw.bootstrapSwitch('offColor', 'info', true);
+			sw.bootstrapSwitch('offText', 'Butt', true);
+			sw.bootstrapSwitch('labelText', 'View', true);
+			sw.bootstrapSwitch('size', 'large', true);
+
