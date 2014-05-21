@@ -7,11 +7,26 @@ block content
 			p
 				input(type="checkbox", name="version", checked=(true===false ? "checked" : undefined))
 			img#myimg.img-responsive(src = 'http://rubberducknfk.com/images/front.jpg')
-		div
-			br
-			iframe(src="https://public.ducksboard.com/w/D31_0rea5jXGQnRgi9X8" width="300" height="146" frameborder="0" scrolling="no" style="border: solid rgba(38, 42, 50, 0.8) 10px; border-radius: 5px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;")
-			iframe(src="https://public.ducksboard.com/w/o_aKeFzYxD_4lwI9CEPo" width="300" height="146" frameborder="0" scrolling="no" style="border: solid rgba(243, 243, 232, 0.701961) 10px; border-radius: 5px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;")
-			iframe(src="https://public.ducksboard.com/w/OufKfhGKYCxayuT0DkJ9" width="300" height="146" frameborder="0" scrolling="no" style="border: solid rgba(243, 243, 232, 0.701961) 10px; border-radius: 5px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;")
+		div.bs-callout.bs-callout-warning
+			div.row
+				div.col-md-4
+					h4.
+						Call Me Sometime?
+					i.glyphicon.glyphicon-earphone
+
+					span.
+						&nbsp;Did you know I have a phone number?
+						It's (920) 75DUCKY.  Call me!
+				div.col-md-4
+					iframe(src="https://public.ducksboard.com/w/D31_0rea5jXGQnRgi9X8" width="250" height="146" frameborder="0" scrolling="no" style="border: solid rgba(38, 42, 50, 0.8) 10px; border-radius: 5px; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box;")
+				div.col-md-4
+					h4.
+						We Need Hackers!
+					img(src="/images/Octocat.png", width="50px").pull-left
+					p
+					| The duck is only here 5 more days!  If you are a coder, please take a look at&nbsp;
+					a(href='https://github.com/RubberDuckNFK/RubberDuckNFK') our Github Repo
+					|  we will accept any pull request!
 		script.
 			$(document).ready(function(){
 				var sw = $('input[name="version"]');
