@@ -38,18 +38,18 @@ router.post('/respondToSms', function(req, res) {
                 "message" : "I just took someone's picture!  Get yours taken by texting (920) 75DUCKY !  #chryslerquack "
             },
             function (response) {
-                if (response && response.error) {
-                }
+                    var twiml = new twilio.TwimlResponse();
+
+                    twiml.sms('Thanks for texting the Rubber Duck! I just took your picture, tag yourself at ' +
+                        'https://www.facebook.com/photo.php?fbid=' + response.id + '&set=o.1414766195467290&type=3&theater')
+                    ;
+
+                    res.type('text/xml');
+                    res.send(twiml.toString());
             });
 
-        var twiml = new twilio.TwimlResponse();
+      //  res.send('Thank you!')
 
-        twiml.sms('Thanks for texting the Rubber Duck! I just took your picture, tag yourself at ' +
-            'https://www.facebook.com/photo.php?fbid=' + response.id + '&set=o.1414766195467290&type=3&theater')
-            ;
-
-        res.type('text/xml');
-        res.send(twiml.toString());
     }
     else {
         res.send('you are not twilio.  Buzz off.');
