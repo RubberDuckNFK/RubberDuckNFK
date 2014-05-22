@@ -40,7 +40,7 @@ router.post('/respondToSms', function(req, res) {
             function (response) {
                 var twiml = new twilio.TwimlResponse();
 
-                twiml.sms('Thanks for texting the Rubber Duck! I just posted a picture from the webcam! Tag yourself at ' +
+                twiml.sms('Thanks for texting the Rubber Duck! We just posted a picture from the webcam to our facbook photos! Tag yourself at ' +
                     'https://www.facebook.com/photo.php?fbid=' + response.id);
 
                 res.type('text/xml');
