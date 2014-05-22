@@ -33,22 +33,19 @@ router.post('/respondToSms', function(req, res) {
             "POST",
             {
 
-                "url": "http://rubberducknfk.com/images/back.jpg",
+                "url": "http://rubberducknfk.com/images/front.jpg",
                 "place" : "8070729884",
-                "message" : "I just took someone's picture!  Get yours taken by texting (920) 75DUCKY !  #chryslerquack "
+                "message" : "I just took someone's picture! They texted '" + req.body + "' to me at (920) 75DUCKY !  #chryslerquack "
             },
             function (response) {
                     var twiml = new twilio.TwimlResponse();
 
-                    twiml.sms('Thanks for texting the Rubber Duck! I just took your picture, tag yourself at ' +
-                        'https://www.facebook.com/photo.php?fbid=' + response.id + '&set=o.1414766195467290&type=3&theater')
-                    ;
+                    twiml.sms('Thanks for texting the Rubber Duck! I just posted a picture from the webcam! Tag yourself at ' +
+                        'https://www.facebook.com/photo.php?fbid=' + response.id);
 
                     res.type('text/xml');
                     res.send(twiml.toString());
             });
-
-      //  res.send('Thank you!')
 
     }
     else {
