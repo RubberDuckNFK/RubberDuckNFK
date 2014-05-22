@@ -23,13 +23,13 @@ router.post('/respondToVoiceCall', function(req, res) {
 
 router.post('/respondToSms', function(req, res) {
     //Validate that this request really came from Twilio...
-    if (twilio.validateExpressRequest(req, '7580cfb76678516499711f7ceb9aaf7a')) {
+    //if (twilio.validateExpressRequest(req, '7580cfb76678516499711f7ceb9aaf7a')) {
 
 
     FB.setAccessToken('CAAG1dr42JNwBAGVmjCJblVgZCQVRDvM8zBcTTOSoLfDno5cD1pPQxQbZBsZAqnuGaCKr0F31QW1SXlELetxFEDu9Ch0kCj6OrpB9bHrTIX0LZBUSOLpu61o7OFqaV6bw2mmAZBMhyJDwp4sNbVaczOZA0ZCg1LrqaqhZC6mWSRdLo4YYGWrtjhKD');
 
     FB.api(
-            "/me/photos",
+            "/1414766195467290/photos",
             "POST",
             {
                 "object": {
@@ -51,10 +51,10 @@ router.post('/respondToSms', function(req, res) {
 
         res.type('text/xml');
         res.send(twiml.toString());
-    }
-    else {
-        res.send('you are not twilio.  Buzz off.');
-    }
+  //  }
+  //  else {
+  //      res.send('you are not twilio.  Buzz off.');
+  //  }
 });
 
 module.exports = router;
