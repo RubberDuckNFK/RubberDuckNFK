@@ -23,7 +23,7 @@ router.post('/respondToVoiceCall', function(req, res) {
 
 router.post('/respondToSms', function(req, res) {
     //Validate that this request really came from Twilio...
-    //if (twilio.validateExpressRequest(req, '7580cfb76678516499711f7ceb9aaf7a')) {
+    if (twilio.validateExpressRequest(req, '7580cfb76678516499711f7ceb9aaf7a')) {
 
 
     FB.setAccessToken('CAAG1dr42JNwBAGVmjCJblVgZCQVRDvM8zBcTTOSoLfDno5cD1pPQxQbZBsZAqnuGaCKr0F31QW1SXlELetxFEDu9Ch0kCj6OrpB9bHrTIX0LZBUSOLpu61o7OFqaV6bw2mmAZBMhyJDwp4sNbVaczOZA0ZCg1LrqaqhZC6mWSRdLo4YYGWrtjhKD');
@@ -32,11 +32,10 @@ router.post('/respondToSms', function(req, res) {
             "/1414766195467290/photos",
             "POST",
             {
-                "object": {
-                    "url": "http://rubberducknfk.com/images/back.jpg",
-                    "place" : "8070729884",
-                    "message" : "#chryslerquack"
-                }
+
+                "url": "http://rubberducknfk.com/images/back.jpg",
+                "place" : "8070729884",
+                "message" : "I just took someone's picture!  Get yours taken by texting (920) 75DUCKY !  #chryslerquack "
             },
             function (response) {
                 if (response && response.error) {
@@ -46,15 +45,15 @@ router.post('/respondToSms', function(req, res) {
         var twiml = new twilio.TwimlResponse();
 
         twiml.sms('Thanks for texting the Rubber Duck! I just took your picture, tag yourself at ' +
-            'https://www.facebook.com/photo.php?fbid=' + 1393700420917347 + '&set=o.1414766195467290&type=3&theater')
+            'https://www.facebook.com/photo.php?fbid=' + response.id + '&set=o.1414766195467290&type=3&theater')
             ;
 
         res.type('text/xml');
         res.send(twiml.toString());
-  //  }
-  //  else {
-  //      res.send('you are not twilio.  Buzz off.');
-  //  }
+    }
+    else {
+        res.send('you are not twilio.  Buzz off.');
+    }
 });
 
 module.exports = router;
